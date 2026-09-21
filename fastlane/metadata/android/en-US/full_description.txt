@@ -1,0 +1,32 @@
+Ink Recents shows your recent apps as cards, one card at a time.
+
+Swipe sideways to go to the next card. Tap a card to open that app. Swipe a
+card up to close that app. Swipe a card down to close all the other apps. Two
+tall buttons do the same with one tap.
+
+Nothing animates. The row jumps from card to card in one step, because e-ink
+shows a moving row as a smear. The screen is black on white, with no shadows.
+
+A strip of icons shows every recent app. A tap on an icon brings its card to
+the middle.
+
+Android does not tell an app what is running, so Ink Recents works in one of
+two ways.
+
+With usage access, the app puts your apps in order of last use, and a card
+shows the app icon.
+
+With Shizuku, the app reads the real task list of the system, and a card closes
+its task. Shizuku is a separate free app that you start from the device. There
+is no computer and no root.
+
+Open the screen from a quick settings tile, or bind a key to the intent action
+dev.equwal.inkrecents.OPEN.
+
+Ink Recents collects nothing. It has no INTERNET permission, no advertisements
+and no analytics.
+
+Made for e-ink readers (Viwoods, Onyx Boox, Bigme and others) and any
+Android 12 or later.
+
+Free software, GPL-3.0-or-later.

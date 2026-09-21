@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        Special access. The user grants it from a settings screen. The app reads
+        the usage log to put the apps in order of last use. It is used only when
+        there is no shell access to ask the system directly.
+    -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!--
+        Without shell access, "close" ends the background processes of an app.
+        Android grants this permission at install.
+    -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <!-- Shell access through Shizuku, if the user has it. -->
+    <uses-permission android:name="moe.shizuku.manager.permission.API_V23" />
+
+    <!--
+        Package visibility. The app shows the name and the icon of each app in
+        the list, so it must see the apps that have a launcher icon.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.App">
+
+        <!--
+            The one screen. It keeps out of its own list, and it starts one task
+            only, so a second start brings the same screen back.
+        -->
+        <activity
+            android:name=".RecentsActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:taskAffinity="dev.equwal.inkrecents.recents">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- For a key remapper, or any other app that starts this screen. -->
+            <intent-filter>
+                <action android:name="dev.equwal.inkrecents.OPEN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:label="@string/settings_label" />
+
+        <!-- A tile in the quick settings panel that opens the screen. -->
+        <service
+            android:name=".RecentsTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_tile"
+            android:label="@string/tile_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

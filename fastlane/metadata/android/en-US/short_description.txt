@@ -1,0 +1,1 @@
+A recent-apps switcher drawn for e-ink. One card for each swipe.

@@ -1,0 +1,6 @@
+First release.
+
+Recent apps as cards, one card for each swipe, drawn for e-ink. Tap to open.
+Swipe a card up to close that app. Swipe a card down to close the others. Two
+modes: usage access, or Shizuku for the real task list. A quick settings tile
+and the intent action dev.equwal.inkrecents.OPEN.
