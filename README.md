@@ -15,7 +15,12 @@ Android 12 or later.
 
 ## Screenshots
 
-To be added.
+<p>
+  <img src="docs/screenshots/recents.png" width="260" alt="One app card, the icon strip, and the two close buttons">
+  <img src="docs/screenshots/settings.png" width="260" alt="Settings: usage access, Shizuku, about">
+</p>
+
+The pictures are from a Viwoods AiPaper Reader.
 
 ## Install
 
