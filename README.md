@@ -70,6 +70,8 @@ quick settings panel, then tap it.
 reader or any Android device. It can put this screen on a button: for example,
 a double tap of Power. Rebind is from the same maker.
 
+More extensions: [Awesome Rebind](https://github.com/equwal/awesome-rebind).
+
 ## Say thanks
 
 Ink Recents is free and open source. If it made your device better, you can
