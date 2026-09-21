@@ -51,6 +51,7 @@ class SettingsActivity : Activity() {
         col.row("Version", null, enabled = false, state = BuildConfig.VERSION_NAME)
         col.row("Licence", null, enabled = false, state = "GPL-3.0-or-later")
         col.row("Source code", REPO) { start(Intent(Intent.ACTION_VIEW, Uri.parse(REPO))) }
+        col.row("Buy me a coffee", TIP.removePrefix("https://")) { start(Intent(Intent.ACTION_VIEW, Uri.parse(TIP))) }
     }
 
     /** The four steps to shell access, from the device itself. */
@@ -90,5 +91,6 @@ class SettingsActivity : Activity() {
 
     private companion object {
         const val REPO = "https://github.com/equwal/ink-recents"
+        const val TIP = "https://ko-fi.com/truex"
     }
 }

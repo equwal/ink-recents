@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Settings has a "Buy me a coffee" row. It opens ko-fi.com/truex. A tip unlocks nothing.
+
 ## 0.1.0
 
 First release.
