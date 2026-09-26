@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- The APK is smaller: R8 removes the code that the app does not use.
+
 ## 0.1.1
 
 - Settings has a "Buy me a coffee" row. It opens ko-fi.com/truex. A tip unlocks nothing.

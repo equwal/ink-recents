@@ -2,6 +2,7 @@
 // Copyright (c) 2026 equwal
 package dev.equwal.inkrecents
 
+import android.annotation.SuppressLint
 import android.app.PendingIntent
 import android.content.Intent
 import android.os.Build
@@ -16,6 +17,8 @@ import android.service.quicksettings.TileService
  */
 class RecentsTileService : TileService() {
 
+    // The SDK check below gives each Android version the call that it supports.
+    @SuppressLint("StartActivityAndCollapseDeprecated")
     override fun onClick() {
         super.onClick()
         val intent = Intent(this, RecentsActivity::class.java)
