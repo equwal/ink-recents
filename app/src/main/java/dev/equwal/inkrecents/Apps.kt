@@ -124,13 +124,13 @@ object Apps {
 
     /**
      * The picture that the system keeps of a task. The files belong to `system`,
-     * so this works only where the shell is root, or can use `su`. It gives null
-     * in every other case.
+     * so this works only where the shell is root. It gives null in every other
+     * case. The app never calls `su`.
      */
     fun snapshot(taskId: Int, done: (android.graphics.Bitmap?) -> Unit) {
         val dir = "/data/system_ce/0/snapshots/"
         val pick = "f=$dir${taskId}_reduced.jpg; [ -e \$f ] || f=$dir$taskId.jpg; "
-        Shell.run(pick + "base64 -w 0 \$f 2>/dev/null || su 0 base64 -w 0 \$f 2>/dev/null") { r ->
+        Shell.run(pick + "base64 -w 0 \$f 2>/dev/null") { r ->
             val bytes = runCatching {
                 android.util.Base64.decode(r.output.trim(), android.util.Base64.DEFAULT)
             }.getOrNull()

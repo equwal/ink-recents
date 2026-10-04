@@ -16,7 +16,9 @@ background processes of an app that you close.
 
 **Shizuku (moe.shizuku.manager.permission.API_V23).** If you run Shizuku, the
 app asks the shell for the task list, and closes a task that you close. The
-commands are `dumpsys activity recents`, `am stack remove` and `am kill`.
+commands are `dumpsys activity recents`, `am stack remove` and `am kill`. On a device where
+the shell is root, it also reads the task snapshot files with `base64`, to show
+a picture on the card. The app never runs `su`.
 
 ## What the app stores
 
