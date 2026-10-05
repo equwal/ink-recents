@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3
+
+- The app declares the Shizuku provider, so Shizuku can hand it the shell.
+- The snapshot read no longer falls back to `su`. The privacy policy names the
+  snapshot read.
+
 ## 0.1.2
 
 - The APK is smaller: R8 removes the code that the app does not use.
